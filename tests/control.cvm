@@ -1,0 +1,55 @@
+// ─── control.cvm  ─────────────────────────────────────
+// if/else and while loop demo
+
+// if / else
+let score = 85;
+if (score >= 90) {
+    print "Grade: A";
+} else {
+    if (score >= 80) {
+        print "Grade: B";
+    } else {
+        print "Grade: C";
+    }
+}
+
+// while loop — countdown
+let n = 5;
+print "Counting down:";
+while (n > 0) {
+    print n;
+    n = n - 1;
+}
+print "Liftoff!";
+
+// FizzBuzz (1 to 15) — using modulo via manual calculation
+print "--- FizzBuzz ---";
+let i = 1;
+while (i <= 15) {
+    // compute i mod 3 and i mod 5 using floor division
+    let d3 = i / 3;
+    // truncate: d3 - floor(d3) == 0 when i divisible by 3
+    // Simpler: check i - 3 * (i/3) == 0
+    // But we don't have floor division built-in, so use subtraction loop approach
+    // instead: just use nested ifs with known multiples
+    let fb = false;
+    if (i == 3 or i == 6 or i == 9 or i == 12 or i == 15) {
+        if (i == 15) {
+            print "FizzBuzz";
+            fb = true;
+        } else {
+            print "Fizz";
+            fb = true;
+        }
+    }
+    if (!fb) {
+        if (i == 5 or i == 10) {
+            print "Buzz";
+            fb = true;
+        }
+    }
+    if (!fb) {
+        print i;
+    }
+    i = i + 1;
+}

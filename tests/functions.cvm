@@ -1,0 +1,54 @@
+// ─── functions.cvm  ───────────────────────────────────
+// Function declarations, calls, recursion
+
+fn add(a, b) {
+    return a + b;
+}
+
+fn multiply(a, b) {
+    return a * b;
+}
+
+fn max(a, b) {
+    if (a > b) {
+        return a;
+    } else {
+        return b;
+    }
+}
+
+fn factorial(n) {
+    if (n <= 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+fn fibonacci(n) {
+    if (n <= 1) {
+        return n;
+    } else {
+        let a = fibonacci(n - 1);
+        let b = fibonacci(n - 2);
+        return a + b;
+    }
+}
+
+// Calls
+print add(10, 20);          // 30
+print multiply(6, 7);       // 42
+print max(100, 200);        // 200
+
+print "5! =";
+print factorial(5);         // 120
+
+print "10! =";
+print factorial(10);        // 3628800
+
+print "Fibonacci sequence (0-9):";
+let k = 0;
+while (k < 10) {
+    print fibonacci(k);
+    k = k + 1;
+}
